@@ -1,0 +1,114 @@
+.exercise-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.exercise-stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-lg) !important;
+  text-align: center;
+}
+
+.exercise-stat-value {
+  font-size: var(--font-size-3xl);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.exercise-stat-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.exercise-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.exercise-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-lg) !important;
+  gap: var(--spacing-md);
+}
+
+.exercise-item-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.exercise-type-badge {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.exercise-item-details {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.exercise-dot {
+  color: var(--color-text-muted);
+}
+
+.exercise-item-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.exercise-item-calories {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.exercise-cal-value {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.exercise-cal-unit {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.exercise-item-actions {
+  display: flex;
+  gap: 4px;
+}
+
+@media (max-width: 640px) {
+  .exercise-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .exercise-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .exercise-item-right {
+    width: 100%;
+    justify-content: space-between;
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--border-color);
+  }
+}

@@ -1,0 +1,46 @@
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-3xl);
+}
+
+.spinner-full-page {
+  min-height: 60vh;
+}
+
+.spinner {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+.spinner-ring {
+  position: absolute;
+  inset: 0;
+  border: 3px solid transparent;
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.spinner-ring-2 {
+  inset: 4px;
+  border-top-color: var(--color-accent);
+  animation-duration: 0.8s;
+  animation-direction: reverse;
+}
+
+.spinner-ring-3 {
+  inset: 8px;
+  border-top-color: var(--color-primary-light);
+  animation-duration: 1.2s;
+}
+
+.spinner-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  font-weight: 500;
+}

@@ -1,0 +1,83 @@
+.weight-top-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.weight-log-card h3,
+.weight-bmi-card h3 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+}
+
+.weight-log-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.weight-bmi-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.bmi-display {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.bmi-value {
+  font-size: var(--font-size-4xl);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.bmi-scale {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bmi-scale-bar {
+  display: flex;
+  height: 8px;
+  border-radius: var(--border-radius-full);
+  overflow: hidden;
+  gap: 2px;
+}
+
+.bmi-scale-segment {
+  height: 100%;
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+.bmi-scale-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--color-text-muted);
+}
+
+.bmi-weight-info {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.bmi-weight-info strong {
+  color: var(--color-text-primary);
+}
+
+.weight-chart {
+  margin-bottom: var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+  .weight-top-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,62 @@
+.dashboard-cards {
+  margin-bottom: var(--spacing-xl);
+}
+
+.dashboard-charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+.dashboard-charts > :first-child {
+  grid-column: 1 / -1;
+}
+
+.chart-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.chart-subtitle {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-lg);
+}
+
+.chart-wrapper {
+  width: 100%;
+  min-height: 250px;
+}
+
+.chart-tooltip {
+  padding: var(--spacing-sm) var(--spacing-md) !important;
+  border-radius: var(--border-radius-sm) !important;
+  font-size: var(--font-size-xs) !important;
+}
+
+.chart-tooltip-label {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--color-text-primary);
+}
+
+.chart-tooltip-value {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Recharts overrides */
+.recharts-default-tooltip {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .dashboard-charts {
+    grid-template-columns: 1fr;
+  }
+}
