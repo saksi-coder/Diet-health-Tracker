@@ -9,11 +9,13 @@ const app = express();
 connectDB();
 
 // Init Middleware
+const allowedOrigin = (process.env.FRONTEND_URL || "http://localhost:3000").replace(/\/+$/, "");
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:3000",
+    origin: allowedOrigin,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
   })
 );
 app.use(express.json());
