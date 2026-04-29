@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { getTodayLog, getLogsRange } from "../api/logsApi";
 import { calculateBMI, getBMICategory } from "../utils/bmiCalculator";
@@ -29,6 +30,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 const Dashboard = () => {
   const { user } = useAuth();
+  const navigate = useNavigate();
   const [todayLog, setTodayLog] = useState(null);
   const [weeklyLogs, setWeeklyLogs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -148,6 +150,26 @@ const Dashboard = () => {
           badge={exerciseCalories ? `${exerciseCalories} kcal burned` : null}
           badgeClass="badge-green"
         />
+      </div>
+
+      {/* Quick Actions */}
+      <div className="dashboard-quick-actions">
+        <button className="quick-action-card glass-card" onClick={() => navigate("/diet-plan")} id="dashboard-diet-btn">
+          <div className="quick-action-icon" style={{ background: "linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(0, 212, 170, 0.15))" }}>🥗</div>
+          <div className="quick-action-info">
+            <h4>Get Diet Plan</h4>
+            <p>Personalized meal plan based on your health data</p>
+          </div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-muted)" strokeWidth="2"><path d="M9 18l6-6-6-6" /></svg>
+        </button>
+        <button className="quick-action-card glass-card" onClick={() => navigate("/chatbot")} id="dashboard-chat-btn">
+          <div className="quick-action-icon" style={{ background: "linear-gradient(135deg, rgba(108, 99, 255, 0.2), rgba(59, 130, 246, 0.15))" }}>💬</div>
+          <div className="quick-action-info">
+            <h4>Chat Assistant</h4>
+            <p>Ask anything about your calories, BMI, or fitness</p>
+          </div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-muted)" strokeWidth="2"><path d="M9 18l6-6-6-6" /></svg>
+        </button>
       </div>
 
       {/* Charts */}

@@ -1,0 +1,258 @@
+/* ============================================
+   DIET PLAN PAGE STYLES
+   ============================================ */
+
+.diet-plan-controls {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: flex-end;
+  margin-bottom: var(--spacing-xl);
+  flex-wrap: wrap;
+}
+
+.diet-plan-controls .form-group {
+  flex: 1;
+  min-width: 220px;
+  margin-bottom: 0;
+}
+
+.diet-plan-controls .form-label {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Goal Badge */
+.diet-goal-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-xl);
+  animation: slideUp 0.4s ease;
+}
+
+.diet-goal-banner.weightLoss {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(239, 68, 68, 0.04));
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.diet-goal-banner.weightGain {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(59, 130, 246, 0.04));
+  border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.diet-goal-banner.maintain {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(34, 197, 94, 0.04));
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+.diet-goal-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.weightLoss .diet-goal-icon {
+  background: rgba(239, 68, 68, 0.15);
+}
+
+.weightGain .diet-goal-icon {
+  background: rgba(59, 130, 246, 0.15);
+}
+
+.maintain .diet-goal-icon {
+  background: rgba(34, 197, 94, 0.15);
+}
+
+.diet-goal-info h3 {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.diet-goal-info p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Meal Grid */
+.meal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.meal-card {
+  position: relative;
+  overflow: hidden;
+  animation: slideUp 0.5s ease backwards;
+}
+
+.meal-card:nth-child(1) { animation-delay: 0.05s; }
+.meal-card:nth-child(2) { animation-delay: 0.1s; }
+.meal-card:nth-child(3) { animation-delay: 0.15s; }
+.meal-card:nth-child(4) { animation-delay: 0.2s; }
+
+.meal-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  border-radius: 4px 0 0 4px;
+}
+
+.meal-card.breakfast::before { background: var(--color-warning); }
+.meal-card.lunch::before    { background: var(--color-accent); }
+.meal-card.dinner::before   { background: var(--color-primary); }
+.meal-card.snacks::before   { background: var(--color-info); }
+
+.meal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+}
+
+.meal-type {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.meal-emoji {
+  font-size: 22px;
+}
+
+.meal-label {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.meal-calories {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-accent);
+  background: rgba(0, 212, 170, 0.1);
+  padding: 4px 12px;
+  border-radius: var(--border-radius-full);
+}
+
+.meal-name {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+}
+
+.meal-items {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.meal-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.meal-item::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+/* Total Calories Bar */
+.diet-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(0, 212, 170, 0.08));
+  border: 1px solid var(--border-color);
+  margin-bottom: var(--spacing-xl);
+  animation: slideUp 0.5s ease backwards;
+  animation-delay: 0.25s;
+}
+
+.diet-total-label {
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.diet-total-value {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Tip */
+.diet-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  background: rgba(234, 179, 8, 0.06);
+  border: 1px solid rgba(234, 179, 8, 0.2);
+  animation: slideUp 0.5s ease backwards;
+  animation-delay: 0.3s;
+}
+
+.diet-tip-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.diet-tip-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.diet-tip-text strong {
+  color: var(--color-warning);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .meal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .diet-plan-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .diet-plan-controls .btn {
+    width: 100%;
+  }
+
+  .diet-total {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-sm);
+  }
+}

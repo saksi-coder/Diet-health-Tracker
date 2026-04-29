@@ -15,6 +15,8 @@ import WaterLog from "./pages/WaterLog";
 import ExerciseLog from "./pages/ExerciseLog";
 import WeightLog from "./pages/WeightLog";
 import Profile from "./pages/Profile";
+import DietPlan from "./pages/DietPlan";
+import Chatbot from "./pages/Chatbot";
 
 const AppLayout = () => {
   const { isAuthenticated } = useAuth();
@@ -39,6 +41,8 @@ const AppLayout = () => {
               <Route path="/log/exercise" element={<ExerciseLog />} />
               <Route path="/log/weight" element={<WeightLog />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/diet-plan" element={<DietPlan />} />
+              <Route path="/chatbot" element={<Chatbot />} />
             </Route>
 
             {/* Default redirect */}
